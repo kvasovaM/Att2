@@ -34,10 +34,9 @@
             this.inputS = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.inputK = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.start = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.output = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -75,19 +74,20 @@
             // 
             // inputK
             // 
-            this.inputK.Location = new System.Drawing.Point(150, 141);
+            this.inputK.Location = new System.Drawing.Point(151, 138);
             this.inputK.Name = "inputK";
             this.inputK.Size = new System.Drawing.Size(122, 24);
             this.inputK.TabIndex = 4;
             // 
-            // button1
+            // start
             // 
-            this.button1.Location = new System.Drawing.Point(10, 185);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 37);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Старт";
-            this.button1.UseVisualStyleBackColor = true;
+            this.start.Location = new System.Drawing.Point(10, 185);
+            this.start.Name = "start";
+            this.start.Size = new System.Drawing.Size(171, 37);
+            this.start.TabIndex = 5;
+            this.start.Text = "Старт";
+            this.start.UseVisualStyleBackColor = true;
+            this.start.Click += new System.EventHandler(this.start_Click);
             // 
             // label4
             // 
@@ -100,32 +100,21 @@
             // 
             // output
             // 
-            this.output.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.output.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.output.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.output.Location = new System.Drawing.Point(211, 242);
+            this.output.Location = new System.Drawing.Point(211, 241);
             this.output.Name = "output";
-            this.output.Size = new System.Drawing.Size(93, 18);
-            this.output.TabIndex = 7;
-            this.output.Text = "слово";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
-            this.listBox1.Location = new System.Drawing.Point(10, 276);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(431, 130);
-            this.listBox1.TabIndex = 8;
+            this.output.Size = new System.Drawing.Size(294, 70);
+            this.output.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 418);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(866, 321);
             this.Controls.Add(this.output);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.start);
             this.Controls.Add(this.inputK);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.inputS);
@@ -148,10 +137,9 @@
         private System.Windows.Forms.TextBox inputS;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox inputK;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button start;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label output;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
