@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MKLibrary
 {
@@ -14,12 +11,7 @@ namespace MKLibrary
         {
             List =list ;
         }
-        public Lists(string str)
-        {
-            List = StrToList(str);
-        }
-
-
+       
         public List<int> CreateNewList(int n)
         {
             List<int> list = List.Distinct().ToList();
