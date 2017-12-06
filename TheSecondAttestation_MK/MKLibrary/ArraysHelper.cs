@@ -18,15 +18,6 @@ namespace MKLibrary
             return (T)Convert.ChangeType(str, typeof(T));
         }
 
-        // Функция конвертирует строку в массив элементов T
-        // (при невозможности конвертации происходит ошибка)
-        public T[] StrToArray<T>(string str)
-        {
-            return Array.ConvertAll(
-               str.Split(new char[] { ',', ' ', ';' }, StringSplitOptions.RemoveEmptyEntries),
-               (s) => StrToValue<T>(s)
-           );
-        }
 
         public static T[] StrToArray1<T>(string str)
         {
@@ -110,6 +101,16 @@ namespace MKLibrary
             }
 
             return matrix;
+        }
+        
+        // Функция конвертирует строку в массив элементов T
+        // (при невозможности конвертации происходит ошибка)
+        public T[] StrToArray<T>(string str)
+        {
+            return Array.ConvertAll(
+               str.Split(new char[] { ',', ' ', ';' }, StringSplitOptions.RemoveEmptyEntries),
+               (s) => StrToValue<T>(s)
+           );
         }
     }
 }
