@@ -22,7 +22,7 @@ namespace Task_9_2_46
                 {
                     // Читаем содержимое выбранного файла и преобразуем его в массив
                     string arrText = FilesUtils.Read(openFileDialog.FileName);
-                    int[,] arr = helper.StrToArray2D<int>(arrText);
+                    int[,] arr = ArraysHelper.StrToArray2D<int>(arrText);
 
                     // Копируем полученный массив в DataGridView
                     DataGridViewUtils.Array2ToGrid(inputGrid, arr);

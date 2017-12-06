@@ -13,7 +13,7 @@ namespace MKLibrary
 
         // Функция конвертирует строку в значение T
         // (при невозможности конвертации происходит ошибка)
-        private T StrToValue<T>(string str)
+        public static T StrToValue<T>(string str)
         {
             return (T)Convert.ChangeType(str, typeof(T));
         }
@@ -28,6 +28,13 @@ namespace MKLibrary
            );
         }
 
+        public static T[] StrToArray1<T>(string str)
+        {
+            return Array.ConvertAll(
+               str.Split(new char[] { ',', ' ', ';' }, StringSplitOptions.RemoveEmptyEntries),
+               (s) => StrToValue<T>(s)
+           );
+        }
         // Функция конвертирует массив элементов T в строку
         // (вторым параметром можно указать разделитель, по умолчанию ", ")
         public string ArrayToStr<T>(T[] arr, string separator = ", ")
@@ -77,7 +84,7 @@ namespace MKLibrary
 
         // Функция конвертирует строку в двумерный массив, если это возможно.
         // В случае некорректных данных бросается исключение
-        public T[,] StrToArray2D<T>(string str)
+        public static T[,] StrToArray2D<T>(string str)
         {
             string[] lines = str.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
@@ -85,13 +92,13 @@ namespace MKLibrary
                 throw new Exception();
 
             int rowsCount = lines.Length;
-            int columnsCount = StrToArray<T>(lines[0]).Length;
+            int columnsCount = StrToArray1<T>(lines[0]).Length;
 
             T[,] matrix = new T[rowsCount, columnsCount];
 
             for (int i = 0; i < rowsCount; i++)
             {
-                T[] tempArray = StrToArray<T>(lines[i]);
+                T[] tempArray = StrToArray1<T>(lines[i]);
 
                 if (tempArray.Length != columnsCount)
                     throw new Exception();
