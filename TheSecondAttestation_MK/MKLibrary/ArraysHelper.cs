@@ -49,7 +49,7 @@ namespace MKLibrary
         }
 
         // Функция конвертирует двумерный массив в строку
-        public string Array2DToStr<T>(T[,] matrix)
+        public static string Array2DToStr1<T>(T[,] matrix)
         {
             int rowsCount = matrix.GetLength(0);
             int columnsCount = matrix.GetLength(1);
@@ -112,5 +112,31 @@ namespace MKLibrary
                (s) => StrToValue<T>(s)
            );
         }
+
+        // Функция конвертирует двумерный массив в строку
+        public string Array2DToStr<T>(T[,] matrix)
+        {
+            int rowsCount = matrix.GetLength(0);
+            int columnsCount = matrix.GetLength(1);
+
+            string result = "";
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                for (int j = 0; j < columnsCount; j++)
+                {
+                    result += matrix[i, j];
+
+                    if (j != columnsCount - 1)
+                        result += " ";
+                }
+
+                if (i != rowsCount - 1)
+                    result += Environment.NewLine;
+            }
+
+            return result;
+        }
+
     }
 }
