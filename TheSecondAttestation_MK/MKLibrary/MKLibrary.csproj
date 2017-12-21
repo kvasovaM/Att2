@@ -49,8 +49,6 @@
     <Compile Include="IOUtils.cs" />
     <Compile Include="Lists.cs" />
     <Compile Include="MessagesUtils.cs" />
-    <Compile Include="Triangle.cs" />
-    <Compile Include="TriangleUtils.cs" />
     <Compile Include="WorkWith2DArrays.cs" />
     <Compile Include="WorkWithArrays.cs" />
     <Compile Include="ArraysHelper.cs" />
